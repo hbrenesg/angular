@@ -1,27 +1,18 @@
+header {
+    margin-bottom: 120px;
+}
+
 .header-img-icono {
     width: 120px;
     min-width: 20px;
 }
 
-/* .header-div-principal {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.header-div-principal-nav-ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    align-items: center;
-} */
-
 ul {
     list-style: none;
 }
 
-.header-li {
-    color: #4ca349;
-    font-weight: bold;
+@media (max-width: 991px) {
+    ul {
+        background-color: #4ca349;
+    }
 }

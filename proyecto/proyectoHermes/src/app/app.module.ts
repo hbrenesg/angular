@@ -9,6 +9,7 @@ import { HorariosComponent } from './components/horarios/horarios.component';
 import { PedidosWAComponent } from './components/pedidos-wa/pedidos-wa.component';
 import { ResenaComponent } from './components/resena/resena.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { NovedadesComponent } from './components/novedades/novedades.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
     HorariosComponent,
     PedidosWAComponent,
     ResenaComponent,
-    UbicacionComponent
+    UbicacionComponent,
+    NovedadesComponent
   ],
   imports: [
     BrowserModule

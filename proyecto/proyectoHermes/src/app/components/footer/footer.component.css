@@ -1,0 +1,18 @@
+.footer-divRedes {
+    background-color: gainsboro;
+}
+
+.footer-divSlogan {
+    background-color: grey;
+}
+
+.footer-img-icono {
+    width: 80px;
+    mix-blend-mode: multiply;
+}
+
+p {
+    margin: 0;
+    font-weight: bold;
+    color: white;
+}
