@@ -4,10 +4,11 @@
 
 .footer-divSlogan {
     background-color: grey;
+    height: 100px;
 }
 
 .footer-img-icono {
-    width: 80px;
+    width: 120px;
     mix-blend-mode: multiply;
 }
 
