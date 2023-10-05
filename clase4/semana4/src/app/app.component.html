@@ -1,0 +1,62 @@
+<h1>Semana 4</h1>
+
+<h3>Directivas Estructurales</h3>
+<h4>ngIf</h4>
+
+<div *ngIf="false">Esto no se pinta</div>
+<div *ngIf="true">Esto se renderizará</div>
+<div *ngIf="activo">ngIf con propiedad</div>
+<div *ngIf="a > b">Expresiones</div>
+<div *ngIf="a === b">Expresiones</div>
+<div *ngIf="valor === 'si'">comparación</div>
+<!-- La siguiente si la pinta porque JS encuentra la función y tiende a truty -->
+<div *ngIf="aFunction">Función</div>
+<!-- La siguiente no la pinta porque JS ejecuta la función y da false -->
+<div *ngIf="aFunction()">Función</div>
+
+<div>FALSY</div>
+<div *ngIf="0">0</div>
+<div *ngIf="''">0</div>
+<div *ngIf="undefined">undefined</div>
+<div *ngIf="null">null</div>
+
+<hr>
+<h4>ngFor</h4>
+<ul>
+  <li *ngFor="let nombre of usuarios">
+    {{nombre}}
+  </li>
+</ul>
+
+<hr>
+<h4>ngSwitch</h4>
+<select title="Colores" (change)="onColorSelectHandler($event)">
+  <option>Seleccione un color</option>
+  <option *ngFor="let color of colores" value="{{color}}">{{color}}</option>
+</select>
+<div [ngSwitch]="colorSeleccionado">
+  <p *ngSwitchCase="colores[0]">Usted ha seleccionado el color: {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[1]">Usted ha seleccionado el color: {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[2]">Usted ha seleccionado el color: {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[3]">Usted ha seleccionado el color: {{colorSeleccionado}}</p>
+  <p *ngSwitchDefault>Usted no ha seleccionado ningún color</p>
+</div>
+
+<hr>
+<h3>Directivas de atributos</h3>
+<h4>ngStyle</h4>
+<select title="Colores" (change)="onColorSelectHandler($event)">
+  <option>Seleccione un color</option>
+  <option *ngFor="let color of colores" value="{{color}}">{{color}}</option>
+</select>
+<div [ngSwitch]="colorSeleccionado">
+  <p *ngSwitchCase="colores[0]" [ngStyle]="{background: colorSeleccionado}">Usted ha seleccionado el color:
+    {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[1]" [ngStyle]="{background: colorSeleccionado}">Usted ha seleccionado el color:
+    {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[2]" [ngStyle]="{background: colorSeleccionado}">Usted ha seleccionado el color:
+    {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[3]" [ngStyle]="{background: colorSeleccionado}">Usted ha seleccionado el color:
+    {{colorSeleccionado}}</p>
+  <p *ngSwitchDefault>Usted no ha seleccionado ningún color</p>
+</div>
