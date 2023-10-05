@@ -13,5 +13,9 @@ export class TodoComponentComponent {
     { task: 'Comprar arroz', completed: false }
   ]
 
-
+  // Se agrega = y => para convertirla en arrow function y que pueda leer el contexto 
+  // de TodoComponentComponent
+  addTask = (newTask: Task) => {
+    this.todos.push(newTask)
+  }
 }

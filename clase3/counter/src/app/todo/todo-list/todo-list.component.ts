@@ -7,6 +7,7 @@ import { Task } from '../interfaces/task';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent {
+  //Importo la lista de Task
   @Input('data') todos: Task[] = []
 }
 

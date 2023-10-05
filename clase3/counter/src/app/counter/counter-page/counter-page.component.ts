@@ -19,7 +19,7 @@ export class CounterPageComponent {
     this.counter += qty
   }
 
-
+  //Recibimos el evento
   handleInput(e: any) {
     this.titulo = e.target.value
   }

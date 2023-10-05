@@ -6,14 +6,15 @@
 <p [ngClass]="[counter < 1 ? 'negative' : '']">{{titulo}}</p>
 
 <p>{{counter}}</p>
-<!-- <button (click)="counter = counter + 1">+1</button> -->
-<button (click)="modify(1)">+1</button>
-<button (click)="sub()">-1</button>
-<button (click)="counter = 0">Reset</button>
-<!-- El parentesis escucha el DOM -->
 
-<br>
-<br>
+<div>
+    <!-- <button (click)="counter = counter + 1">+1</button> -->
+    <button (click)="modify(1)">+1</button>
+    <button (click)="sub()">-1</button>
+    <button (click)="counter = 0">Reset</button>
+    <!-- El parentesis escucha el DOM -->
+</div>
+
 <input (input)="handleInput($event)" placeholder="Título" type="text">
 
 <form (submit)="handleSubmit($event)">
