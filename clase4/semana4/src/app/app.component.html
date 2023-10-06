@@ -60,3 +60,32 @@
     {{colorSeleccionado}}</p>
   <p *ngSwitchDefault>Usted no ha seleccionado ningún color</p>
 </div>
+
+<hr>
+<h4>ngClass</h4>
+<select title="Colores" (change)="onColorSelectHandler($event)">
+  <option>Seleccione un color</option>
+  <option *ngFor="let color of colores" value="{{color}}">{{color}}</option>
+</select>
+<div [ngSwitch]="colorSeleccionado">
+  <p *ngSwitchCase="colores[0]" [ngClass]="{seleccionado: colorSeleccionado === colores[0]}">Usted ha seleccionado el
+    color:
+    {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[1]" [ngClass]="{seleccionado: colorSeleccionado === colores[1]}">Usted ha seleccionado el
+    color:
+    {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[2]" [ngClass]="{seleccionado: colorSeleccionado === colores[2]}">Usted ha seleccionado el
+    color:
+    {{colorSeleccionado}}</p>
+  <p *ngSwitchCase="colores[3]" [ngClass]="{seleccionado: colorSeleccionado === colores[3]}">Usted ha seleccionado el
+    color:
+    {{colorSeleccionado}}</p>
+  <p *ngSwitchDefault>Usted no ha seleccionado ningún color</p>
+</div>
+
+<hr>
+
+<h4>ngFor componentes</h4>
+<ul>
+  <app-usuario *ngFor="let nombre of usuarios" [usuario]="nombre"></app-usuario>
+</ul>
