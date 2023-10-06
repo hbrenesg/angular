@@ -1,1 +1,21 @@
-<p class="text-center">Componente de Pedidos por WhatsApp</p>
+<p class="text-center fs-4" [ngStyle]="{'font-weight': 'bold'}">PEDIDOS POR WHATSAPP</p>
+
+<div class="container-fluid text-center">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[0]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA[0])"><img
+                    src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
+        </div>
+        <div class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[1]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA[1])"><img
+                    src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
+        </div>
+        <div class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[2]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA[2])"><img
+                    src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
+        </div>
+    </div>
+</div>

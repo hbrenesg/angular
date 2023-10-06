@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-horarios',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./horarios.component.css']
 })
 export class HorariosComponent {
-
+  @Input('informacionHorarios') horarios: string[] = []
+  @Input('informacionNombres') nombres: string[] = []
 }

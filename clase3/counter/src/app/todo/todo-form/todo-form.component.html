@@ -1,6 +1,10 @@
 <section>
-    <h2></h2>
-    <form (submit)="handleSubmit($event)">
+    <h2>Formulario de tareas a agregar</h2>
+    <!-- <form (submit)="handleSubmit($event)">
         <input placeholder="Descripción de tarea a agregar" name="task" />
+    </form> -->
+    <form (submit)="handleSubmit($event)">
+        <input [(ngModel)]="task.task" placeholder="Descripción de tarea a agregar" name="task" />
+        <!-- Lo que se tienen bindeado con task.task es el objeto task con su atributo task -->
     </form>
 </section>
