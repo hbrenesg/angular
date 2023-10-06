@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Supermercado } from 'src/app/interfaces/supermercado';
+import { ContactoSugerenciasComponent } from './components/contacto-sugerencias/contacto-sugerencias.component';
 
 @Component({
   selector: 'app-root',
@@ -35,4 +36,10 @@ export class AppComponent {
   nombres: string[] = [this.tresJsMarket1.nombre, this.tresJsMarket2.nombre, this.tresJsMarket3.nombre]
 
   numerosWA: number[] = [this.tresJsMarket1.whatsApp, this.tresJsMarket2.whatsApp, this.tresJsMarket3.whatsApp]
+
+  nombreCliente: string = ''
+
+  manejarNombreCliente = (nombreCliente: string) => {
+    this.nombreCliente = nombreCliente
+  }
 }

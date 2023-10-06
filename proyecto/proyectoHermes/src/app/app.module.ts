@@ -10,6 +10,7 @@ import { PedidosWAComponent } from './components/pedidos-wa/pedidos-wa.component
 import { ResenaComponent } from './components/resena/resena.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { NovedadesComponent } from './components/novedades/novedades.component';
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NovedadesComponent } from './components/novedades/novedades.component';
     PedidosWAComponent,
     ResenaComponent,
     UbicacionComponent,
-    NovedadesComponent
+    NovedadesComponent,
+    ComentariosComponent
   ],
   imports: [
     BrowserModule

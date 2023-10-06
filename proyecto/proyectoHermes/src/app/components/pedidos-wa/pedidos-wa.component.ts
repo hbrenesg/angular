@@ -10,6 +10,6 @@ export class PedidosWAComponent {
   @Input('informacionNumerosWA') numerosWA: number[] = []
 
   enviarMensaje(e: any, numeroWA: number) {
-    window.location.href = "https://wa.me/" + numeroWA + "?text=Hola%20me%20gustaría%20hacer%20un%20pedido"
+    window.location.href = "https://wa.me/" + numeroWA + "?text=Hola!%20Muchas%20gracias%20por%20escribirnos.%20En%que%20le%20podemos%20servir"
   }
 }
