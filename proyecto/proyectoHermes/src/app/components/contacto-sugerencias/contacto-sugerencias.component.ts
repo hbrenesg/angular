@@ -26,7 +26,7 @@ export class ContactoSugerenciasComponent {
       console.log(this.cliente)
       this.limpiarFormulario(e)
     } else {
-
+      alert("Por favor completar los campos")
     }
 
   }
