@@ -1,0 +1,23 @@
+header {
+    margin-bottom: 120px;
+}
+
+nav {
+    background-color: #4ebe4e;
+}
+
+.header-img-icono {
+    width: 120px;
+    min-width: 20px;
+    mix-blend-mode: multiply;
+}
+
+ul {
+    list-style: none;
+}
+
+@media (max-width: 991px) {
+    ul {
+        background-color: #4ebe4e;
+    }
+}
