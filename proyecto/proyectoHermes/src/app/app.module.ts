@@ -11,6 +11,7 @@ import { ResenaComponent } from './components/resena/resena.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { NovedadesComponent } from './components/novedades/novedades.component';
 import { ComentariosComponent } from './components/comentarios/comentarios.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ComentariosComponent } from './components/comentarios/comentarios.compo
     ComentariosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
