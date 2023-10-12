@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ColoresService } from './colores.service';
+import { compileNgModule } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -22,5 +24,25 @@ export class AppComponent {
   colores: string[] = ['green', 'red', 'blue', 'yellow']
 
   onColorSelectHandler = (e: any) => this.colorSeleccionado = e.target.value
+
+
+  // colorService: ColoresService
+
+  // constructor(colorService: ColoresService) {
+  //   this.colorService = colorService
+  //   setTimeout(() => {
+  //     colorService.coloresExtendidos.push('Morado')
+  //   }, 3000);
+
+
+  // }
+
+  constructor(public colorService: ColoresService) {
+    setTimeout(() => {
+      colorService.coloresExtendidos.push('Morado')
+    }, 3000);
+
+
+  }
 }
 

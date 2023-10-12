@@ -1,5 +1,6 @@
 <h1>Semana 4</h1>
 
+
 <h3>Directivas Estructurales</h3>
 <h4>ngIf</h4>
 
@@ -89,3 +90,16 @@
 <ul>
   <app-usuario *ngFor="let nombre of usuarios" [usuario]="nombre"></app-usuario>
 </ul>
+
+
+<hr>
+<h3>SERVICIOS</h3>
+<ul>
+  <li *ngFor="let color of colorService.coloresExtendidos">{{color}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let pokemon of colorService.pokemones">{{pokemon.name}}</li>
+</ul>
+
+<hr><app-otro-componente></app-otro-componente>
