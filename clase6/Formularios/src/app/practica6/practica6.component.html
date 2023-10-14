@@ -1,0 +1,69 @@
+<h3>Formularios reactivos</h3>
+<pre>{{clientForm.valid}}</pre>
+<!-- <pre>Form data:{{contactForm.value | json}}</pre>
+<pre>Form valid: {{ contactForm.valid}}</pre>
+
+<pre>Name value: {{name.value}}</pre>
+<pre>Name valid: {{name.valid}}</pre>
+<pre>Name touched: {{name.touched}}</pre>
+<pre>Name pristine: {{name.pristine}}</pre>
+<pre>Name dirty: {{name.dirty}}</pre>
+<pre>Name errors: {{name.errors | json}}</pre> -->
+
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+        <label class="form-label" for="codigo">Código</label>
+        <input id="codigo" name="codigo" class="form-control" formControlName="codigo" />
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" class="form-control" formControlName="nombre" />
+        <p *ngIf="clientForm.get('nombre')?.touched && clientForm.get('nombre')?.errors?.['required']"
+            class="alert alert-danger mt-1">Este campo es requerido</p>
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="telefono">Teléfono</label>
+        <input id="telefono" name="telefono" class="form-control" formControlName="telefono" />
+        <p *ngIf="clientForm.get('telefono')?.touched && clientForm.get('telefono')?.errors?.['pattern']"
+            class="alert alert-danger mt-1">Este campo tiene el formato incorrecto</p>
+        <p *ngIf="clientForm.get('telefono')?.touched && clientForm.get('telefono')?.errors?.['required']"
+            class="alert alert-danger mt-1">Este campo es requerido</p>
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="domicilio">Domicilio</label>
+        <input id="domicilio" name="domicilio" class="form-control" formControlName="domicilio" />
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="provincia">Provincia</label>
+        <select class="form-select" id="provincia" name="provincia" title="provincia" formControlName="provincia">
+            <option value="">Seleccione su provincia</option>
+            <option value="Alajuela">Alajuela</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Heredia">Heredia</option>
+            <option value="Cartago">Cartago</option>
+            <option value="Limon">Limon</option>
+            <option value="Guanacaste">Guanacaste</option>
+            <option value="Puntarenas">Puntarenas</option>
+        </select>
+    </div>
+    <div class="mb-4">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoCliente" id="ocasional" value="ocasional"
+                formControlName="tipoCliente" checked>
+            <label class="form-check-label" for="exampleRadios1">Ocasional</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoCliente" id="frecuente" value="frecuente"
+                formControlName="tipoCliente">
+            <label class="form-check-label" for="exampleRadios2">Frecuente</label>
+        </div>
+    </div>
+    <div class="mb-4 form-check">
+        <label class="form-label" for="clienteVerificado">Cliente verificado</label>
+        <input class="form-check-input" type="checkbox" name="clienteVerificado" id="clienteVerificado"
+            title="verificado" formControlName="clienteVerificado">
+    </div>
+    <div class="float-end">
+        <button class="btn btn-success" type="submit">Enviar</button>
+    </div>
+</form>

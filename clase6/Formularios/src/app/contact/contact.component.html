@@ -1,0 +1,91 @@
+<!-- <h3>Template driven form</h3>
+
+<pre>Form data:{{contactForm.value | json}}</pre>
+<pre>Form valid: {{ contactForm.valid}}</pre>
+
+<pre>Name value: {{name.value}}</pre>
+<pre>Name valid: {{name.valid}}</pre>
+<pre>Name touched: {{name.touched}}</pre>
+<pre>Name pristine: {{name.pristine}}</pre>
+<pre>Name dirty: {{name.dirty}}</pre>
+<pre>Name errors: {{name.errors | json}}</pre>
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <div class="mb-4">
+        <label class="form-label" for="name">Nombre</label>
+        <input id="name" name="name" class="form-control" [(ngModel)]="model.name" #name="ngModel" required
+            minlength="3" maxlength="15" />
+        <p class="text-danger" [hidden]="name.valid || name.pristine">Este campo es requerido</p>
+    </div>
+    <div class="mb-4 form-check">
+        <label class="form-label" for="accept">He leido y acepto</label>
+        <input class="form-check-input" type="checkbox" name="accept" id="accept" title="accept"
+            [(ngModel)]="model.accept" required>
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="os">Sistema operativo</label>
+        <select class="form-select" id="os" name="os" title="os" [(ngModel)]="model.operativeSystem" required>
+            <option value="">Seleccione su sistema operativo</option>
+            <option value="windows">Windows</option>
+            <option value="mac">Mac</option>
+            <option value="linux">Linux</option>
+        </select>
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="message">Mensaje</label>
+        <textarea class="form-control" type="message" name="message" id="message" title="message"
+            [(ngModel)]="model.message" required=""></textarea>
+    </div>
+    <div class="float-end">
+        <button class="btn btn-success" type="submit" [disabled]="!contactForm.valid">Enviar</button>
+    </div>
+</form> -->
+
+
+
+<h3>Formularios reactivos</h3>
+<pre>{{contactForm.valid}}</pre>
+<!-- <pre>Form data:{{contactForm.value | json}}</pre>
+<pre>Form valid: {{ contactForm.valid}}</pre>
+
+<pre>Name value: {{name.value}}</pre>
+<pre>Name valid: {{name.valid}}</pre>
+<pre>Name touched: {{name.touched}}</pre>
+<pre>Name pristine: {{name.pristine}}</pre>
+<pre>Name dirty: {{name.dirty}}</pre>
+<pre>Name errors: {{name.errors | json}}</pre> -->
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+        <label class="form-label" for="name">Nombre</label>
+        <input id="name" name="name" class="form-control" formControlName="name" />
+        <p class="text-danger">Este campo es requerido</p>
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="password">Contrasena</label>
+        <input id="password" name="password" class="form-control" formControlName="password" type="password" />
+        <!-- <p class="text-danger">Este campo es requerido</p> -->
+    </div>
+    <div class="mb-4 form-check">
+        <label class="form-label" for="accept">He leido y acepto</label>
+        <input class="form-check-input" type="checkbox" name="accept" id="accept" title="accept"
+            formControlName="accepted">
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="os">Sistema operativo</label>
+        <select class="form-select" id="os" name="os" title="os" formControlName="operativeSystem">
+            <option value="">Seleccione su sistema operativo</option>
+            <option value="windows">Windows</option>
+            <option value="mac">Mac</option>
+            <option value="linux">Linux</option>
+        </select>
+    </div>
+    <div class="mb-4">
+        <label class="form-label" for="message">Mensaje</label>
+        <textarea class="form-control" type="message" name="message" id="message" title="message"
+            formControlName="message"></textarea>
+    </div>
+    <div class="float-end">
+        <button class="btn btn-success" type="submit" [disabled]="contactForm.invalid">Enviar</button>
+    </div>
+</form>
