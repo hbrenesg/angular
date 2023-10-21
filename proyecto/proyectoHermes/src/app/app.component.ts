@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Supermercado } from 'src/app/interfaces/supermercado';
-import { ContactoSugerenciasComponent } from './components/contacto-sugerencias/contacto-sugerencias.component';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +8,8 @@ import { ContactoSugerenciasComponent } from './components/contacto-sugerencias/
 })
 export class AppComponent {
   title = "3J's Market";
+
+  @Input('manejarNombreCliente') manejarNombreCliente: any
 
   tresJsMarket1: Supermercado = {
     nombre: "3J's Market #1",
@@ -39,7 +40,4 @@ export class AppComponent {
 
   nombreCliente: string = ''
 
-  manejarNombreCliente = (nombreCliente: string) => {
-    this.nombreCliente = nombreCliente
-  }
 }

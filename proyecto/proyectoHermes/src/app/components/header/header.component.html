@@ -1,7 +1,36 @@
 <header class="header">
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <img src="../assets/img/3JS_LOGO.jpg" href="#" class="header-img-icono">
+            <img src="../assets/img/3JS_LOGO.jpg" routerLink="/inicio" class="header-img-icono">
+
+            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                aria-expanded="true" aria-controls="collapseExample">Ingreso <span class="bi bi-person"></span></button>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <form #loginForm="ngForm" (ngSubmit)="ingresar(loginForm)">
+                        <div class="mb-4">
+                            <label class="form-label" for="nombreUsuarioLogin">Nombre de Usuario</label>
+                            <input id="nombreUsuarioLogin" name="nombreUsuarioLogin" class="form-control"
+                                [(ngModel)]="model.nombreUsuarioLogin" minlength="3" maxlength="15" required
+                                #nombreUsuarioLogin="ngModel" placeholder="Nombre de Usuario" />
+                            <p [hidden]="nombreUsuarioLogin.valid || nombreUsuarioLogin.pristine"
+                                class="alert alert-danger mt-1">Este campo es
+                                requerido, debe tener al menos 3 caracteres y maximo 15</p>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label" for="contrasenaLogin">Contraseña</label>
+                            <input id="contrasenaLogin" name="contrasenaLogin" class="form-control"
+                                [(ngModel)]="model.contrasenaLogin" minlength="3" maxlength="15" required
+                                type="password" placeholder="Contraseña" />
+                        </div>
+                        <button class="btn btn-success" type="submit"
+                            [ngStyle]="{'margin-top':'20px', 'width': '200px'}">Ingreso</button>
+                    </form>
+                    <a class="btn btn-success" type="button" [ngStyle]="{'margin-top':'20px'}"
+                        [routerLink]="['/registro']">Registro</a>
+                </div>
+            </div>
+
             <div *ngIf="nombreCliente !== ''" [ngStyle]="{'font-weight': 'bold', 'font-size': '20px'}">Bienvenido:
                 {{nombreCliente}}</div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -12,22 +41,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Pedidos WhatsApp</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/pedidosWA">Pedidos WhatsApp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Novedades!</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/novedades">Novedades!</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Reseña</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/resena">Reseña</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Horarios</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/horarios">Horarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Ubicación</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/ubicacion">Ubicación</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Contacto y Sugerencias</a>
+                        <a class="nav-link active" aria-current="page" routerLink="/contacto">Contacto y
+                            Sugerencias</a>
                     </li>
                 </ul>
             </div>

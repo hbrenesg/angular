@@ -2,20 +2,39 @@
 
 <div class="container-fluid text-center">
     <div class="row align-items-center justify-content-center">
-        <div *ngIf="horarios[0] !== '' && horarios[1] !== ''" class="col-sm-4">
-            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[0]}}</p>
-            <p>{{horarios[0]}}</p>
-            <p>{{horarios[1]}}</p>
+        <div *ngIf="horarios1[0] !== '' && horarios1[1] !== '' && vieneDesdeInicio === true" class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres1[0]}}</p>
+            <p>{{horarios1[0]}}</p>
+            <p>{{horarios1[1]}}</p>
         </div>
-        <div *ngIf="horarios[2] !== '' && horarios[3] !== ''" class="col-sm-4">
-            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[1]}}</p>
-            <p>{{horarios[2]}}</p>
-            <p>{{horarios[3]}}</p>
+        <div *ngIf="horarios2[0] !== '' && horarios2[1] !== '' && vieneDesdeInicio === false" class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres2[0]}}</p>
+            <p>{{horarios2[0]}}</p>
+            <p>{{horarios2[1]}}</p>
         </div>
-        <div *ngIf="horarios[4] !== '' && horarios[5] !== ''" class="col-sm-4">
-            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[2]}}</p>
-            <p>{{horarios[4]}}</p>
-            <p>{{horarios[5]}}</p>
+
+
+        <div *ngIf="horarios1[2] !== '' && horarios1[3] !== '' && vieneDesdeInicio === true" class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres1[1]}}</p>
+            <p>{{horarios1[2]}}</p>
+            <p>{{horarios1[3]}}</p>
+        </div>
+        <div *ngIf="horarios2[2] !== '' && horarios2[3] !== '' && vieneDesdeInicio === false" class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres2[1]}}</p>
+            <p>{{horarios2[2]}}</p>
+            <p>{{horarios2[3]}}</p>
+        </div>
+
+
+        <div *ngIf="horarios1[4] !== '' && horarios1[5] !== '' && vieneDesdeInicio === true" class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres1[2]}}</p>
+            <p>{{horarios1[4]}}</p>
+            <p>{{horarios1[5]}}</p>
+        </div>
+        <div *ngIf="horarios2[4] !== '' && horarios2[5] !== '' && vieneDesdeInicio === false" class="col-sm-4">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres2[2]}}</p>
+            <p>{{horarios2[4]}}</p>
+            <p>{{horarios2[5]}}</p>
         </div>
     </div>
 </div>

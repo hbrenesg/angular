@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tresjsmarket-bd": {
+      "hosting": {
+        "proyectoHermes": [
+          "tresjsmarket-bd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tresjsmarket-bd"
+  }
+}

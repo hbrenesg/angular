@@ -9,11 +9,19 @@ import { Cliente } from 'src/app/interfaces/cliente';
 export class ContactoSugerenciasComponent {
   @Input('informacionNombres') nombres: string[] = []
   @Input('manejarNombreCliente') manejarNombreCliente: any
+  @Input('vieneDesdeInicio') vieneDesdeInicio: boolean = false
+
   cliente: Cliente = { nombre: '', correoElectronico: '', supermercadoAsociado: '', mensaje: '' }
   nombreCliente: string = ''
 
   manejarCambioEnInput(e: any) {
-    this.manejarNombreCliente(e.target.value)
+    console.log(e.target.value)
+    if (this.vieneDesdeInicio) {
+      this.manejarNombreCliente(e.target.value)
+    } else {
+      this.manejarNombreClienteDesdeAqui(e.target.value)
+    }
+
   }
 
   manejarFormulario(e: any) {
@@ -37,4 +45,10 @@ export class ContactoSugerenciasComponent {
     e.target['seleccionarSupermercado'].value = ''
     e.target['mensajeCliente'].value = ''
   }
+
+  manejarNombreClienteDesdeAqui(valor: any) {
+
+
+  }
+
 }

@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./resena.component.css']
 })
 export class ResenaComponent {
+  constructor() { }
 
+  ngOnInit(): void {
+  }
 }

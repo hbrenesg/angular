@@ -2,19 +2,38 @@
 
 <div class="container-fluid text-center">
     <div class="row align-items-center justify-content-center">
-        <div class="col-sm-4">
-            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[0]}}</p>
-            <button (click)="enviarMensaje($event, numerosWA[0])"><img
+        <div class="col-sm-4" *ngIf="nombres1[0] !== '' && numerosWA1[0] !== 0 && vieneDesdeInicio === true">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres1[0]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA1[0])"><img
                     src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
         </div>
-        <div class="col-sm-4">
-            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[1]}}</p>
-            <button (click)="enviarMensaje($event, numerosWA[1])"><img
+        <div class="col-sm-4" *ngIf="nombres2[4] !== '' && numerosWA2[5] !== 0 && vieneDesdeInicio === false">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres2[0]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA2[0])"><img
                     src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
         </div>
-        <div class="col-sm-4">
-            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres[2]}}</p>
-            <button (click)="enviarMensaje($event, numerosWA[2])"><img
+
+
+        <div class="col-sm-4" *ngIf="nombres1[1] !== '' && numerosWA1[1] !== 0 && vieneDesdeInicio === true">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres1[1]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA1[1])"><img
+                    src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
+        </div>
+        <div class="col-sm-4" *ngIf="nombres2[1] !== '' && numerosWA2[1] !== 0 && vieneDesdeInicio === false">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres2[1]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA2[1])"><img
+                    src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
+        </div>
+
+
+        <div class="col-sm-4" *ngIf="nombres1[2] !== '' && numerosWA1[2] !== 0 && vieneDesdeInicio === true">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres1[2]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA1[2])"><img
+                    src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
+        </div>
+        <div class="col-sm-4" *ngIf="nombres2[2] !== '' && numerosWA2[2] !== 0 && vieneDesdeInicio === false">
+            <p [ngStyle]="{'font-weight': 'bold'}">{{nombres2[2]}}</p>
+            <button (click)="enviarMensaje($event, numerosWA2[2])"><img
                     src="../assets/img/WhatsAppButtonGreenSmall.png"></button>
         </div>
     </div>
