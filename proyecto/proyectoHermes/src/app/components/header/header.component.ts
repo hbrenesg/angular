@@ -6,6 +6,8 @@ interface LoginForm {
   contrasenaLogin: string
 }
 
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,6 +15,8 @@ interface LoginForm {
 })
 export class HeaderComponent implements OnInit {
   @Input('nombreCliente') nombreCliente: string = ''
+
+  bandera: boolean = false
 
   model: LoginForm = {
     nombreUsuarioLogin: '',
@@ -27,18 +31,20 @@ export class HeaderComponent implements OnInit {
 
   ingresar(loginForm: any) {
     this.usuarioService.obtenerTodosUsuarios()
+    this.bandera = false
     for (let index = 0; index < this.usuarioService.data.length; index++) {
       const element = this.usuarioService.data[index];
       if (element.nombreUsuario == loginForm.value.nombreUsuarioLogin && element.contrasena == loginForm.value.contrasenaLogin) {
         alert('Ingreso exitoso')
         this.nombreCliente = loginForm.value.nombreUsuarioLogin
         loginForm.reset()
-        break
-      } else {
-        alert('Ingreso incorrecto, vuelva a intentar')
-        loginForm.reset()
+        this.bandera = true
         break
       }
+    }
+    if (this.bandera == false) {
+      alert('Ingreso incorrecto, vuelva a intentar')
+      loginForm.reset()
     }
   }
 

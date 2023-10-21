@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Database, set, ref, update, onValue, list } from '@angular/fire/database';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Usuario } from '../interfaces/usuario';
 
 @Injectable({
@@ -60,7 +59,7 @@ export class UsuariosService {
   validarNombreUsuario(nombreUsuario: string): any {
     this.obtenerTodosUsuarios()
     for (let index = 0; index < this.data.length; index++) {
-      if (this.data[index].nombreUsuario === nombreUsuario) {
+      if (this.data[index].nombreUsuario == nombreUsuario) {
         return true
       } else {
         return false
@@ -73,14 +72,18 @@ export class UsuariosService {
     this.bandera = false
     if (this.data != null) {
       for (let index = 0; index < this.data.length; index++) {
-        if (index == this.data[index].id) {
+        if (index == this.data.length - 1) {
           this.bandera = true
-          return this.data.length + 1
+          if (index == 0) {
+            return 1
+          } else {
+            return this.data.length
+          }
           break
         }
       }
 
-      if (this.bandera === false) {
+      if (this.bandera == false) {
         return this.data.length
       }
     } else {
