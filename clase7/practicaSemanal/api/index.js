@@ -56,7 +56,10 @@ app.get('/', (request, response) => {
     return response.send(posts.sort(post => post.id))
 })
 
-app.get('/:id', (request, response) => response.send(posts.find(post => post.id == request.params.id)))
+app.get('/:id', (request, response) => {
+    console.log(request)
+    response.send(posts.find(post => post.id == request.params.id))
+})
 
 app.post('/', (request, response) => {
     let postToAdd = request.body;

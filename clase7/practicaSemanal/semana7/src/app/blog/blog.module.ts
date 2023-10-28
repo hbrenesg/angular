@@ -5,13 +5,15 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './pages/blog/blog.component';
 import { PostsComponent } from './pages/posts/posts.component';
 import { PostComponent } from './pages/post/post.component';
+import { PostItemComponent } from './components/post-item/post-item.component';
 
 
 @NgModule({
   declarations: [
     BlogComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    PostItemComponent
   ],
   imports: [
     CommonModule,
