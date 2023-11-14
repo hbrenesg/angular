@@ -1,0 +1,12 @@
+<div *ngIf="usuarioAdministrador" class="text-center">
+    <div class="form-check form-switch" *ngFor="let usuario of usuarios">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [(ngModel)]="usuario.administrador"
+            (change)="cambioEstado(usuario.id, $event)">
+        <label class="form-check-label" for="flexSwitchCheckChecked">{{usuario.nombreUsuario}}</label>
+    </div>
+</div>
+
+<div *ngIf="!usuarioAdministrador">
+    <p class="text-center fs-4" [ngStyle]="{'font-weight': 'bold'}" [routerLink]="['/inicio']">Debe loguearse primero!!!
+    </p>
+</div>

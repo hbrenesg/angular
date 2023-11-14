@@ -38,6 +38,6 @@ export class AppComponent {
 
   numerosWA: number[] = [this.tresJsMarket1.whatsApp, this.tresJsMarket2.whatsApp, this.tresJsMarket3.whatsApp]
 
-  nombreCliente: string = ''
+  nombreUsuario: string = ''
 
 }

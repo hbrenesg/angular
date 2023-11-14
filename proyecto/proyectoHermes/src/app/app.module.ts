@@ -20,6 +20,8 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { HttpClientModule } from '@angular/common/http';
 import { NoEncontradaComponent } from './components/no-encontrada/no-encontrada.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ModificarAdministradoresComponent } from './components/modificar-administradores/modificar-administradores.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     ComentariosComponent,
     FormularioUsuariosComponent,
     NoEncontradaComponent,
-    InicioComponent
+    InicioComponent,
+    ModificarAdministradoresComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    LazyLoadImageModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase())
   ],

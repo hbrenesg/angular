@@ -11,6 +11,7 @@ import { NoEncontradaComponent } from './components/no-encontrada/no-encontrada.
 import { Supermercado } from './interfaces/supermercado';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { FormularioUsuariosComponent } from './components/formulario-usuarios/formulario-usuarios.component';
+import { ModificarAdministradoresComponent } from './components/modificar-administradores/modificar-administradores.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'ubicacion', component: UbicacionComponent },
   { path: 'contacto', component: ContactoSugerenciasComponent },
   { path: 'registro', component: FormularioUsuariosComponent },
+  { path: 'modificarAdmins', component: ModificarAdministradoresComponent },
   { path: '**', component: NoEncontradaComponent },
 ];
 

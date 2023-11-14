@@ -11,6 +11,8 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class NovedadesComponent implements OnInit {
   productos: Producto[] = []
 
+  defaultImage = 'https://via.placeholder.com/1000/09f/fff.png'
+
   constructor(private productosService: ProductosService) { }
 
   ngOnInit(): void {

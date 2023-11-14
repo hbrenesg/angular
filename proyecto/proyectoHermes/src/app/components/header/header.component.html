@@ -3,9 +3,10 @@
         <div class="container-fluid">
             <img src="../assets/img/3JS_LOGO.jpg" routerLink="/inicio" class="header-img-icono">
 
-            <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                aria-expanded="true" aria-controls="collapseExample">Ingreso <span class="bi bi-person"></span></button>
-            <div class="collapse" id="collapseExample">
+            <button *ngIf="!estaLogueado" class="btn btn-success" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">Ingreso <span
+                    class="bi bi-person"></span></button>
+            <div *ngIf="!estaLogueado" class="collapse" id="collapseExample">
                 <div class="card card-body">
                     <form #loginForm="ngForm" (ngSubmit)="ingresar(loginForm)">
                         <div class="mb-4">
@@ -30,9 +31,14 @@
                         [routerLink]="['/registro']">Registro</a>
                 </div>
             </div>
+            <button *ngIf="estaLogueado" class="btn btn-success" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample"
+                (click)="cerrarSesion($event)">Cerrar Sesion
+                <span class="bi bi-person"></span></button>
 
-            <div *ngIf="nombreCliente !== ''" [ngStyle]="{'font-weight': 'bold', 'font-size': '20px'}">Bienvenido:
-                {{nombreCliente}}</div>
+            <div *ngIf="estaLogueado" [ngStyle]="{'font-weight': 'bold', 'font-size': '20px'}">Bienvenido:
+                {{nombreUsuario}}
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -58,6 +64,10 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" routerLink="/contacto">Contacto y
                             Sugerencias</a>
+                    </li>
+                    <li *ngIf="estaLogueado && esAdministrador" class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/modificarAdmins">Modificar
+                            Administradores</a>
                     </li>
                 </ul>
             </div>

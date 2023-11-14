@@ -12,7 +12,9 @@ export class FormularioUsuariosComponent implements OnInit {
   constructor(private readonly formBuilder: FormBuilder, private usuarioService: UsuariosService) { }
 
   usuarioFormulario!: FormGroup
-  usuario: Usuario = { id: 0, nombreUsuario: '', email: '', contrasena: '', telefono: 0 }
+  usuario: Usuario = {
+    id: 0, nombreUsuario: '', email: '', contrasena: '', telefono: 0, administrador: false, estaLogueado: false
+  }
   usuarioExiste: boolean = false
 
   ngOnInit(): void {
@@ -81,6 +83,8 @@ export class FormularioUsuariosComponent implements OnInit {
       this.usuario.email = this.usuarioFormulario.value.email
       this.usuario.contrasena = this.usuarioFormulario.value.contrasena
       this.usuario.telefono = this.usuarioFormulario.value.telefono
+      this.usuario.administrador = false
+      //this.usuario.logueado = false
       this.usuarioService.insertarUsuarioBD(this.usuario)
 
       this.usuarioFormulario.reset()
